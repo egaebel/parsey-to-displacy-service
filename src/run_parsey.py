@@ -3,7 +3,7 @@ from subprocess import Popen
 from subprocess import STDOUT
 
 def run_parsey(sentence):
-    parsey_path = "/home/egaebel/Programs/parsey-to-displacy-service/parsey-to-displacy/src/parsey.sh"
+    parsey_path = "parsey.sh"
     parsey_proc = Popen(["/bin/bash", parsey_path, sentence], stdout=PIPE, stdin=PIPE, stderr=STDOUT)
     parsey_output, parsey_error = parsey_proc.communicate(input="\n")
     # Trim logging, start output at line starting with "Input:""
@@ -13,4 +13,5 @@ def run_parsey(sentence):
         if line.find("Input:") == 0:
             break
         start_index += 1
+    print "parsey_output_list:\n%s\n" % parsey_output_list
     return '\n'.join(parsey_output_list[start_index:])

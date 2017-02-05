@@ -190,7 +190,6 @@ def parse_ascii_tree(ascii_tree_input):
     depth = 0
     parents = {}
     for line in string.split(ascii_tree_input, "\n"):
-        
         if string.find(line, "Input:") == 0\
                 or string.find(line, "Parse:") == 0\
                 or not string.strip(line):
