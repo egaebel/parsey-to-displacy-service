@@ -13,5 +13,4 @@ def run_parsey(sentence):
         if line.find("Input:") == 0:
             break
         start_index += 1
-    print "parsey_output_list:\n%s\n" % parsey_output_list
     return '\n'.join(parsey_output_list[start_index:])
