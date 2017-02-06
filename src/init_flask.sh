@@ -1,0 +1,1 @@
+export FLASK_APP=conversion_service.py
