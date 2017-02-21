@@ -1,8 +1,11 @@
+import sys
+
 from flask import Flask
 from flask import jsonify
 from flask import abort
 from flask import request
 
+sys.path.insert(1, "../../parsey-mcparseface-service/src/")
 from parse_tree_parser import parse_ascii_tree
 from parse_tree_to_displacy import parse_tree_to_displacy_tree
 from run_parsey import run_parsey
