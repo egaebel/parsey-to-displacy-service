@@ -17,7 +17,9 @@ def convert():
     print "Request.get_json():\n%s" % str(request.get_json(force=True))
     sentence = request.get_json()['text']
     print "Sentence is: %s" % sentence
-    response = jsonify(parse_tree_to_displacy_tree(parse_ascii_tree(run_parsey(sentence))))
+    ascii_tree = run_parsey(sentence)
+    print("\nAscii tree is:\n%s\n" % ascii_tree)
+    response = jsonify(parse_tree_to_displacy_tree(parse_ascii_tree(ascii_tree)))
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
